@@ -1,0 +1,4 @@
+[core]
+    remote = datastorage
+['remote "datastorage"']
+    url = /Users/apple/Desktop/dvc_storage
