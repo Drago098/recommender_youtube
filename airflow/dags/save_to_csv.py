@@ -1,10 +1,14 @@
 import yaml
 import requests
 import csv
-import os
 import psycopg2
 import sys
-CONFIG_PATH = '/Users/apple/Desktop/youtube_recommender/config/config.yaml' 
+import os
+CONFIG_PATH = "/Users/apple/Desktop/youtube_recommender/config/config.yaml"
+
+
+
+
 
 # Load config
 with open(CONFIG_PATH, 'r') as file:
