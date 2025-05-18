@@ -1,0 +1,13 @@
+.airflow/
+airflow.db
+youtube_videos.csv
+logs/
+*.log
+fetch_and_save_test.py
+plugins
+requirements.txt
+venv
+youtube_videos.csv
+__pycache__
+*.pyc
+.DS_Store

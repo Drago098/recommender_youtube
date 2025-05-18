@@ -1,0 +1,11 @@
+# config/config.yaml
+youtube:
+  api_key: "AIzaSyBvq1k_seyyFa-grdDPpzWaDhyjBtdVQFU"
+  channel_id: "UCz8QaiQxApLq8sLNcszYyJw"
+  max_results: 50
+postgres:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "drag123"
+  database: "apple"
