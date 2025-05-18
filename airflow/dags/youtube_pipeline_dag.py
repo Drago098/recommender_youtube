@@ -3,6 +3,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 import sys
 import os 
+import subprocess 
 
 sys.path.insert(0, '/Users/apple/Desktop/youtube_recommender/scripts')
 
@@ -24,6 +25,17 @@ def fetch_and_save():
     print("Done saving videos to CSV")
     save_to_videos(videos)
     print("Done saving videos to PostgreSQL")
+
+    #====DVC + GIT AUTOMATION====
+    try:
+        subprocess.run(["dvc","add", "youtube_videos.csv"], check = True)
+        subprocess.run(["git", "add", "youtube_videos.csv.dvc"], check = True)
+        subprocess.run(["git", "commit", "-m", f"Daily update: {datetime.now().date()}"], check=True)
+        subprocess.run (["dvc", "push"], check = True)
+        print("Successfully pushed changes to DVC and Git.")
+    except:
+        print("Failed to push changes to DVC and Git.")
+
 
 
 with DAG(
